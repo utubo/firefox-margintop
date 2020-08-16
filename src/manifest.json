@@ -1,0 +1,34 @@
+{
+	"manifest_version": 2,
+	"name": "MarginTop",
+	"description": "Add the margin-top to any page on Android",
+	"version": "1.7",
+
+	"icons": {
+		"64": "icon.png"
+	},
+
+	"applications": {
+		"gecko": {
+			"id": "margintop@utb.dip.jp",
+			"strict_min_version": "68.0"
+		}
+	},
+
+	"options_ui": {
+			"page": "options.html",
+			"open_in_tab": false
+	},
+
+	"content_scripts": [
+		{
+			"matches": ["*://*/*"],
+			"js": ["content.js"]
+		}
+	],
+
+	"permissions": [
+		"storage"
+	]
+}
+

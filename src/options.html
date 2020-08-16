@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<style>
+			label {
+				display: block;
+			}
+			#background {
+				margin-bottom: .5rem;
+
+			}
+			#colorDlg {
+				vertical-align: bottom;
+			}
+			#css {
+				display: block;
+				width: 100%;
+				height: 10em;
+			}
+			.deny-item {
+				padding-bottom: .5rem;
+			}
+			.deny-url {
+				width: calc(100% - 4rem);
+			}
+			.del {
+				width: 3.5rem;
+			}
+		</style>
+	</head>
+	<body>
+		<label for="height">Height</label>
+		<div>
+			<input id="height" type="number" min="0" max="9999" size="5">
+			<select id="unit" >
+				<option value="px">px</option>
+				<option value="%">%</option>
+			</select>
+		</div>
+
+		<br>
+
+		<label for="background">Background</label>
+		<select id="background">
+			<option value="" selected>None</option>
+			<option value="color">Color</option>
+			<option value="css">CSS</option>
+		</select>
+
+		<div id="colorContainer" style="display:none;">
+			<input id="colorDlg" type="color">
+			<input id="color">
+		</div>
+		<textarea id="css" style="display:none;"></textarea>
+
+		<br>
+
+		<label>Deny list</label>
+		<div id="denyList"></div>
+		<div style="display:none;">
+			<!-- item template -->
+			<div class="deny-item">
+				<input type="url" class="deny-url" placeholder="https://url.starts.with/this">
+				<input type="button" class="del" value="DEL">
+			</div>
+		</div>
+		<script src="options.js"></script>
+	</body>
+</html>
+

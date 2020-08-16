@@ -1,0 +1,11 @@
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="64" height="64"
+  viewBox="0 0 16 16"
+>
+<g stroke-width="0" fill="#8dc74f">
+  <path d="M6  16q0-2-1.2-2t-1.7 1-1.5 0v-5h9v6z
+           m9 0  q0-2-1.2-2t-1.7 1-1.5 0v1h9z"/>
+</g>
+<path stroke-widh="2" stroke="#737373" fill="none" d="M5.5 2.7l2-2l2 2m-2-2v8.6m-2-2l2 2l2-2"/>
+</svg>
