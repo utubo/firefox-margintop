@@ -48,10 +48,12 @@
 	};
 	const deleteDeny = e => {
 		const item = e.target.parentNode;
+		const denyUrl = item.getElementsByClassName('deny-url')[0];
+		if (!confirm('Delete\n' + denyUrl.value)) return;
 		if (item.nextSibling || item.previousSibling) {
 			item.remove();
 		} else {
-			item.getElementsByClassName('deny-url')[0].value = '';
+			denyUrl.value = '';
 		}
 		saveIni();
 		return;
