@@ -42,6 +42,7 @@
 	}
 	const keepY = scrollY;
 	const s = document.createElement('style');
+	s.id = 'addonMarginTop';
 	s.type = 'text/css';
 	s.innerText = css;
 	document.head.appendChild(s);
@@ -81,6 +82,20 @@
 			clearTimeout(timer);
 			timer = setTimeout(moveFixedElement, 250);
 		}
+	});
+
+	// Add deny list
+	addEventListener('contextmenu', e => {
+		if (!e.target || e.target.tagName != 'HTML') return;
+		e.preventDefault();
+		const p = location.href.split('/');
+		let url = p[0] + '//' + p[2] + '/';
+		if (p[3] && p[3].startsWith('~')) url += p[3] + '/';
+		if (!confirm('Disable MaginTop\n' + url)) return;
+		ini.denyList.push(url);
+		browser.storage.local.set({ 'margintop': ini });
+		document.getElementById('addonMarginTop').remove();
+		setTimeout(() => scroll({top: 0, behavior: 'smooth'}), 10);
 	});
 
 })();
