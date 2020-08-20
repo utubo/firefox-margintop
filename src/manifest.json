@@ -2,7 +2,7 @@
 	"manifest_version": 2,
 	"name": "MarginTop",
 	"description": "Add the margin-top to any page on Android",
-	"version": "1.9",
+	"version": "1.10",
 
 	"icons": {
 		"64": "icon.png"

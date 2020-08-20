@@ -31,14 +31,14 @@
 	if (ini.unit === '%') { // "vh" can`t keep scroll position.
 		h = Math.floor(innerHeight * h / 100);
 	}
-	let css = `html { padding-top: ${h}px; } body { position: relative; min-height: 100vh; }`;
+	let css = `
+		html::before { content: ""; display: block; height: ${h}px; width: 100%; }
+		body { position: relative; min-height: 100vh; }
+	`;
 	if (ini.background === 'css' && ini.css) {
 		css = css + ini.css;
 	} else if (ini.background) {
-		css = css + `html {
-			background: linear-gradient(${ini.background} 0, ${ini.background} ${h}px, transparent ${h}px);
-			background-repeat: no-repeat;
-		}`;
+		css = css + `html::before { background: ${ini.background}; }`;
 	}
 	const keepY = scrollY;
 	const s = document.createElement('style');
